@@ -3,7 +3,8 @@
 require_once("helper.php");
 
 echo getHeader();
-echo "<a href='/codem'>Home</a> >> MarketPlace Order Generator<br/><br/>";
+echo "<a href='/codem'>Home</a> >> MarketPlace Order Generator<br/><br/>
+<i> This table has a list of products and the quantity available, currently third column can have the quantity to be order. If any quantity is greater than zero then button will be enabled to create order, Multiple order can be created and placed all at once. Order can be placed if atleast one order is created.<br/><br/>";
 $products = getAllProducts();
 if(count($products)) {
     echo "<table>
