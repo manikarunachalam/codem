@@ -3,6 +3,7 @@ require_once("helper.php");
 
 echo getHeader();
 
+echo "<a href='/codem'>Home</a> >> Installation<br/><br/>";
 echo "<i>Setting up the required infrastructure... Please make sure mysql server is running.</i><br/>";
 
 echo "<br/>Mysql Connection :";
@@ -104,5 +105,4 @@ echo "<br/><br/> Here is the Default inventory setup file:<a href='sample.csv'>s
       <br/>
       <input type='button' id='populateinventory' value='Click here'> to populate the inventory table with the sample.csv file
       <div id='importresult'></div>";
-echo "<script src='js/install.js'></script></center>";
 echo getFooter();

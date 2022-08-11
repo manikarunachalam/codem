@@ -16,7 +16,7 @@ function getHeader() {
 }
 
 function getFooter() {
-    return "<center/>
+    return "<script src='/codem/js/custom.js'></script></center>
             </body>
             </html>";
 }

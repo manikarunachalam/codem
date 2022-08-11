@@ -3,7 +3,7 @@
 require_once("../helper.php");
 
 echo getHeader();
-echo "<h5>Inventoy Management</h5>";
+echo "<a href='/codem'>Home</a> >> Inventoy Management<br/><br/>";
 $products = getAllProducts();
 if(count($products)) {
     echo "<table>
@@ -22,7 +22,6 @@ if(count($products)) {
     <br/>
     <input type='button' id='populateinventory' value='Click here'> to populate the inventory table with the sample.csv file
     <div id='importresult'></div>";
-    echo "<script src='/codem/js/install.js'></script></center>";
 }
 
 echo getFooter();

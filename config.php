@@ -13,3 +13,5 @@ $inventoryTableName = 'inventory';
 $orderTableName = 'orders';
 
 $orderItemsTableName = 'order_items';
+
+$sources = array('Amazon','AJIO','Ebay','Flipkart','Myntra');
