@@ -1,0 +1,12 @@
+table {
+    border-style:solid;
+    border-width:2px;
+    border-color:gray;
+}
+td {
+    padding: 2px 5px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: lightgray;
+}

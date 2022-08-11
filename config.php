@@ -7,3 +7,9 @@ $mysqlCredentials = array(
     'password'=>'',
     'dbname'=>'codem'
 );
+
+$inventoryTableName = 'inventory';
+
+$orderTableName = 'orders';
+
+$orderItemsTableName = 'order_items';

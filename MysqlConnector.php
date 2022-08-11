@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is a singleton class for mysql connection
  */
@@ -13,9 +12,9 @@ class MysqlConnection {
     private $MysqlConnector;
 
     //Making private4 constructor does not allow creating object outside the class.
-    private function __construct(){
+    private function __construct($mysqlCredentials){
         try{
-            $this->MysqlConnector = new PDO("mysql:host=".$mysqlCredentials['host'].";"."dbname".$mysqlCredentials['dbname'].";charset=UTF8",$mysqlCredentials['username'],$mysqlCredentials['password']);
+            $this->MysqlConnector = new PDO("mysql:host=".$mysqlCredentials['host'].";"."dbname=".$mysqlCredentials['dbname'].";charset=UTF8",$mysqlCredentials['username'],$mysqlCredentials['password']);
         }
         catch(Exception $e) {
             throw $e;
@@ -23,9 +22,9 @@ class MysqlConnection {
     }
 
     //This is responsible for this class to be a singleton and it creates only first time. 
-    public static function getConnector() {
+    public static function getConnector($mysqlCredentials) {
         if(!isset(self::$MysqlConnectorInstance)) {
-            self::$MysqlConnectorInstance = new MysqlConnection();
+            self::$MysqlConnectorInstance = new MysqlConnection($mysqlCredentials);
         }
         return self::$MysqlConnectorInstance;
     }

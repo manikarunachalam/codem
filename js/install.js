@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $("#populateinventory").click(function(){
+        $.ajax({
+            url:"/codem/dataimport.php",
+            type:"post"
+        }).done(function(response){
+            $('#importresult').html(response);
+        });
+    });
+});
