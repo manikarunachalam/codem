@@ -51,7 +51,8 @@ echo "<br/>Creating the Inventory Table: ";
 $sql = "CREATE TABLE $inventoryTableName (
   id int(5) AUTO_INCREMENT PRIMARY KEY, 
   product varchar(5) NOT NULL, 
-  quantity int(3) NOT NULL DEFAULT 0)";
+  quantity int(3) NOT NULL DEFAULT 0,
+  price float(3) NOT NULL)";
 if ($connection->query($sql) === TRUE) {
   echo $inventoryTableName." is created.";
 } else {
@@ -73,7 +74,7 @@ $sql = "CREATE TABLE $orderTableName (
   user_id int(5) NOT NULL, 
   total float(3) NOT NULL, 
   payment_id float(3) NOT NULL, 
-  source varchar(5) NOT NULL)";
+  source varchar(15) NOT NULL)";
 if ($connection->query($sql) === TRUE) {
   echo $orderTableName." is created.";
 } else {
@@ -91,8 +92,10 @@ echo "<br/>Creating the Order line items Table: ";
 $sql = "CREATE TABLE $orderItemsTableName (
   id int(5) AUTO_INCREMENT PRIMARY KEY, 
   product_id int(3) NOT NULL, 
-  quantity int(3) NOT NULL DEFAULT 0, 
-  price float(3) NOT NULL)";
+  order_id int(3) NOT NULL, 
+  ordered_product_quantity int(3) NOT NULL DEFAULT 0, 
+  product_price_total float(3) NOT NULL,
+  ordered_product_price float(3) NOT NULL)";
 if ($connection->query($sql) === TRUE) {
   echo $orderItemsTableName." is created.";
 } else {

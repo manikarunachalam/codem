@@ -14,8 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         while (($row = fgetcsv($file)) !== FALSE) {
             $rows++;
             $product = explode("=",$row[0]);
+            $product[]=rand(1,10);
             //this can be improved by single query execution
-            $stmt = getMysqlConnector()->prepare("INSERT INTO $inventoryTableName (product, quantity) VALUES (?, ?)");
+            $stmt = getMysqlConnector()->prepare("INSERT INTO $inventoryTableName (product, quantity, price) VALUES (?, ?, ?)");
             $stmt->execute($product)?$success++:($message.="<br/>Product $product[0] : ".$stmt->errorinfo()[2]);
         }
         if($rows==$success) 

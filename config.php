@@ -9,9 +9,12 @@ $mysqlCredentials = array(
 );
 
 $inventoryTableName = 'inventory';
-
 $orderTableName = 'orders';
-
 $orderItemsTableName = 'order_items';
+
+$productQtyMin = 1;
+
+$productQtyMax = 5;
+
 
 $sources = array('Amazon','AJIO','Ebay','Flipkart','Myntra');
